@@ -403,7 +403,7 @@ fi
 #-------------------------------
 
 if [ "$action" = "preview-theme" ]; then
-  themesdir="$(nix-build --no-out-link -A themes "$root/share/styx-src")"
+  themesdir="$(nix-build --no-out-link -A themes)"
   in="$(nix-build --no-out-link -A $theme $themesdir 2> /dev/null)/example"
   if [ $? -ne 0 ] || [ -z "$theme" ]; then
     echo "Please select an available theme, available themes are:"
